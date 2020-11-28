@@ -207,11 +207,11 @@ def main():
     args.length = adjust_length_to_model(args.length, max_sequence_length=model.config.max_position_embeddings)
     logger.info(args)
     generated_sequences = []
-    prompt_text = "Это приводит к финансовым потерям компании, а также потере интересных кандидатов - из-за того, что его просто не нашли, не предложили подходящую вакансию, или даже не дали вовремя обратную связь."
+    
     while prompt_text != "stop":
         while not len(prompt_text):
             prompt_text = args.prompt if args.prompt else input("Context >>> ")
-
+        prompt_text = "Это приводит к финансовым потерям компании, а также потере интересных кандидатов - из-за того, что его просто не нашли, не предложили подходящую вакансию, или даже не дали вовремя обратную связь."
         # Different models need different input formatting and/or extra arguments
         requires_preprocessing = args.model_type in PREPROCESSING_FUNCTIONS.keys()
         if requires_preprocessing:
