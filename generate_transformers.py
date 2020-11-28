@@ -257,7 +257,7 @@ def main():
             generated_sequences.append(total_sequence)
             # os.system('clear')
             f2 = open('' + str(unixtime) + '.log', 'w', encoding='utf-8')
-            f2.write(';'.join(srcs2)+ "\n")
+            f2.write(total_sequence)
             f2.close
             print(total_sequence)
         prompt_text = ""
